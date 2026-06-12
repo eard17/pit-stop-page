@@ -19,22 +19,22 @@
             --primary: #0066FF;
             --primary-dark: #0052FF;
             --accent: #0052FF;
-            --text-primary: #f8fafc;
-            --text-secondary: #94a3b8;
-            --bg-light: #0f172a;
-            --bg-white: #080c16;
-            --border: rgba(255, 255, 255, 0.08);
+            --text-primary: #ffffff;
+            --text-secondary: #cbd5e1;
+            --bg-light: #1a202c;
+            --bg-white: #0f1419;
+            --border: rgba(255, 255, 255, 0.15);
         }
 
         :root.light {
             --primary: #0052FF;
             --primary-dark: #003cc2;
             --accent: #0052FF;
-            --text-primary: #0A1128;
-            --text-secondary: #475569;
+            --text-primary: #0a0e27;
+            --text-secondary: #334155;
             --bg-light: #ffffff;
-            --bg-white: #f8fafc;
-            --border: rgba(10, 17, 40, 0.08);
+            --bg-white: #f1f5f9;
+            --border: rgba(10, 17, 40, 0.12);
         }
 
         body {
@@ -220,9 +220,9 @@
             border-radius: 1rem;
             padding: 2rem;
             text-align: center;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            border: 1px solid var(--border);
+            border: 1px solid #e2e8f0;
         }
 
         .module-card:hover {
@@ -233,21 +233,21 @@
 
         .module-icon {
             font-size: 3rem;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: var(--primary);
             margin-bottom: 1rem;
+            display: flex;
+            justify-content: center;
         }
 
         .module-card h3 {
             font-size: 1.25rem;
             margin-bottom: 0.75rem;
-            color: var(--text-primary);
+            color: #0a0e27;
+            font-weight: 700;
         }
 
         .module-card p {
-            color: var(--text-secondary);
+            color: #475569;
             font-size: 0.95rem;
             line-height: 1.5;
         }
@@ -288,8 +288,9 @@
         }
 
         .feature-text p {
-            opacity: 0.9;
+            opacity: 0.95;
             font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.95);
         }
 
         /* Stats */
@@ -310,8 +311,8 @@
             padding: 2rem;
             border-radius: 1rem;
             text-align: center;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-            border: 1px solid var(--border);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+            border: 1px solid #e2e8f0;
         }
 
         .stat-number {
@@ -324,7 +325,7 @@
         }
 
         .stat-label {
-            color: var(--text-secondary);
+            color: #475569;
             margin-top: 0.5rem;
             font-weight: 500;
         }
