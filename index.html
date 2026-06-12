@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PitStop - Sistema Integral de Gestión para Talleres Automotrices</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0066FF;
+            --primary-dark: #0052FF;
+            --accent: #0052FF;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --bg-light: #0f172a;
+            --bg-white: #080c16;
+            --border: rgba(255, 255, 255, 0.08);
+        }
+
+        :root.light {
+            --primary: #0052FF;
+            --primary-dark: #003cc2;
+            --accent: #0052FF;
+            --text-primary: #0A1128;
+            --text-secondary: #475569;
+            --bg-light: #ffffff;
+            --bg-white: #f8fafc;
+            --border: rgba(10, 17, 40, 0.08);
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-primary);
+            background: linear-gradient(135deg, var(--bg-white) 0%, var(--bg-light) 100%);
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #0052FF 0%, #0066FF 100%);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 0 20px rgba(0, 82, 255, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1.5rem;
+            font-weight: 900;
+            letter-spacing: -0.05em;
+        }
+
+        .logo span {
+            font-size: 2rem;
+        }
+
+        nav {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        nav a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: white;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid white;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn:hover {
+            background: white;
+            color: var(--primary);
+        }
+
+        /* Hero */
+        .hero {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 900;
+            letter-spacing: -0.02em;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+            padding: 1rem 2rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Modules Section */
+        .modules-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .section-title p {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+        }
+
+        .modules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .module-card {
+            background: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid var(--border);
+        }
+
+        .module-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(99, 102, 241, 0.15);
+            border-color: var(--primary);
+        }
+
+        .module-icon {
+            font-size: 3rem;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+
+        .module-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+        }
+
+        .module-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* Features Section */
+        .features-section {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            padding: 4rem 2rem;
+            margin: 4rem 0;
+        }
+
+        .features-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .feature-item {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            flex-shrink: 0;
+        }
+
+        .feature-text h4 {
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .feature-text p {
+            opacity: 0.9;
+            font-size: 0.95rem;
+        }
+
+        /* Stats */
+        .stats-section {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            text-align: center;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--border);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            margin-top: 0.5rem;
+            font-weight: 500;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-primary);
+            color: white;
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .footer-section a,
+        .footer-section p {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            nav {
+                gap: 1rem;
+            }
+
+            .modules-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .module-card {
+                padding: 1.5rem;
+            }
+
+            .module-icon {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header-container {
+                padding: 0 1rem;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 0.5rem;
+                width: 100%;
+            }
+
+            .logo {
+                font-size: 1.25rem;
+            }
+
+            .logo span {
+                font-size: 1.5rem;
+            }
+
+            .hero {
+                padding: 2rem 1rem;
+            }
+
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .btn-primary,
+            .btn-secondary {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <span class="material-icons-round">minor_crash</span>
+                PITSTOP
+            </div>
+            <nav>
+                <a href="#modulos">Módulos</a>
+                <a href="#caracteristicas">Características</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Sistema Integral de Gestión para Talleres Automotrices</h1>
+        <p>Centraliza la gestión completa de tu taller: órdenes de trabajo, clientes, empleados, nómina, inventario,
+            reportes y más.</p>
+    </section>
+
+    <!-- Modules Section -->
+    <section class="modules-section" id="modulos">
+        <div class="section-title">
+            <h2>Módulos Disponibles</h2>
+            <p>Herramientas completas para gestionar tu taller</p>
+        </div>
+
+        <div class="modules-grid">
+            <!-- Dashboard -->
+            <div class="module-card">
+                <div class="module-icon">
+                    <span class="material-icons-round">dashboard</span>
+                </div>
+                <h3>Dashboard</h3>
+                <p>Panel de control con KPIs en tiempo real, estadísticas y resumen de tu negocio.</p>
+            </div>
+
+            <!-- Órdenes de Trabajo -->
+            <div class="module-card">
+                <div class="module-icon">
+                    <span class="material-icons-round">construction</span>
+                </div>
+                <h3>Órdenes de Trabajo</h3>
+                <p>Gestión completa del flujo de órdenes: recepción, diagnóstico, proceso y entrega.</p>
+            </div>
+
+            <!-- Clientes y Vehículos -->
+            <div class="module-card">
+                <div class="module-icon">
+                    <span class="material-icons-round">people</span>
+                </div>
+                <h3>Clientes y Vehículos</h3>
+                <p>Base de datos de clientes con historial de vehículos y órdenes asociadas.</p>
+            </div>
+
+            <!-- Agenda y Citas -->
+            <div class="module-card">
+                <div class="module-icon">
+                    <span class="material-icons-round">calendar_today</span>
+                </div>
+                <h3>Agenda y Citas</h3>
+                <p>Calendario integrado para gestionar citas, disponibilidad y recordatorios.</p>
+            </div>
+
+            <!-- Reportes -->
+            <div class="module-card">
+                <div class="module-icon">
+                    <span class="material-icons-round">bar_chart</span>
+                </div>
+                <h3>Reportes y Analytics</h3>
+                <p>Análisis detallados de ingresos, eficiencia, ventas y productividad del equipo.</p>
+            </div>
+
+            <!-- Gestión de Personal -->
+            <div class="module-card">
+                <div class="module-icon">
+                    <span class="material-icons-round">badge</span>
+                </div>
+                <h3>Gestión de Personal</h3>
+                <p>Registro de técnicos y asistentes con roles, especialidades y desempeño.</p>
+            </div>
+
+            <!-- Nómina -->
+            <div class="module-card">
+                <div class="module-icon">
+                    <span class="material-icons-round">payments</span>
+                </div>
+                <h3>Nómina y Comisiones</h3>
+                <p>Cálculo automático de salarios, comisiones y bonificaciones sin errores.</p>
+            </div>
+
+            <!-- Inventario -->
+            <div class="module-card">
+                <div class="module-icon">
+                    <span class="material-icons-round">inventory_2</span>
+                </div>
+                <h3>Inventario y Repuestos</h3>
+                <p>Control total de stock en tiempo real, alertas de bajo inventario e historial de movimientos.</p>
+            </div>
+
+            <!-- Catálogo de Servicios -->
+            <div class="module-card">
+                <div class="module-icon">
+                    <span class="material-icons-round">build_circle</span>
+                </div>
+                <h3>Catálogo de Servicios</h3>
+                <p>Gestión de servicios con precios, tiempo estimado y asignación de técnicos.</p>
+            </div>
+
+            <!-- Hojas de Check -->
+            <div class="module-card">
+                <div class="module-icon">
+                    <span class="material-icons-round">assignment</span>
+                </div>
+                <h3>Hojas de Check Vehicular</h3>
+                <p>Formularios de inspección SST (GTH-F-75) con 80+ puntos y generación de PDF.</p>
+            </div>
+
+            <!-- Mi Taller -->
+            <div class="module-card">
+                <div class="module-icon">
+                    <span class="material-icons-round">settings_applications</span>
+                </div>
+                <h3>Mi Taller / Negocio</h3>
+                <p>Configuración de datos del taller, logo, NIT, ubicación y preferencias globales.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section" id="caracteristicas">
+        <div class="features-container">
+            <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">¿Por Qué Elegir PitStop?</h2>
+
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <span class="material-icons-round">flash_on</span>
+                    </div>
+                    <div class="feature-text">
+                        <h4>Implementación Rápida</h4>
+                        <p>Setup en 48 horas sin interrupciones en tu operación.</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <span class="material-icons-round">trending_up</span>
+                    </div>
+                    <div class="feature-text">
+                        <h4>ROI Comprobado</h4>
+                        <p>Recupera tu inversión en 3-6 meses con ahorros de 15-20 horas/semana.</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <span class="material-icons-round">smartphone</span>
+                    </div>
+                    <div class="feature-text">
+                        <h4>Responsive Design</h4>
+                        <p>Funciona perfectamente en desktop, tablet y móvil (320px-1440px).</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <span class="material-icons-round">palette</span>
+                    </div>
+                    <div class="feature-text">
+                        <h4>Dark & Light Mode</h4>
+                        <p>Interfaz moderna con soporte completo para ambos temas.</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <span class="material-icons-round">security</span>
+                    </div>
+                    <div class="feature-text">
+                        <h4>Seguridad Garantizada</h4>
+                        <p>GDPR compliant, encriptación SSL, backup automático diario.</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <span class="material-icons-round">support_agent</span>
+                    </div>
+                    <div class="feature-text">
+                        <h4>Soporte en Español</h4>
+                        <p>Chat en vivo 24/5, documentación completa y capacitación incluida.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">11</div>
+                <div class="stat-label">Módulos Principales</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">80+</div>
+                <div class="stat-label">Campos de Inspección</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">∞</div>
+                <div class="stat-label">Usuarios & Registros</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">99.9%</div>
+                <div class="stat-label">Disponibilidad SLA</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>PitStop</h4>
+                    <p>Sistema integral de gestión para talleres automotrices modernos.</p>
+                    <p style="margin-top: 1rem; font-size: 0.85rem;">© 2026 MS Technology. Todos los derechos
+                        reservados.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Enlaces</h4>
+                    <a href="#modulos">Módulos</a>
+                    <a href="#caracteristicas">Características</a>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+                <p>Hecho con ❤️ para talleres que quieren crecer</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
