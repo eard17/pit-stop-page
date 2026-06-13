@@ -8,9 +8,10 @@
     <!-- Modern Premium Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
-    
+
     <style>
         /* Modern Design Tokens & Variables */
         :root {
@@ -40,7 +41,7 @@
             font-family: 'Outfit', sans-serif;
             color: var(--text-primary);
             background-color: var(--bg-dark);
-            background-image: 
+            background-image:
                 radial-gradient(at 0% 0%, rgba(0, 102, 255, 0.12) 0px, transparent 50%),
                 radial-gradient(at 100% 100%, rgba(99, 102, 241, 0.1) 0px, transparent 50%);
             line-height: 1.6;
@@ -52,13 +53,16 @@
         ::-webkit-scrollbar {
             width: 8px;
         }
+
         ::-webkit-scrollbar-track {
             background: var(--bg-dark);
         }
+
         ::-webkit-scrollbar-thumb {
             background: #1e293b;
             border-radius: 4px;
         }
+
         ::-webkit-scrollbar-thumb:hover {
             background: var(--primary);
         }
@@ -512,14 +516,14 @@
             background-color: white;
             transition: .4s;
             border-radius: 50%;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
         }
 
-        input:checked + .slider {
+        input:checked+.slider {
             background-color: var(--primary);
         }
 
-        input:checked + .slider:before {
+        input:checked+.slider:before {
             transform: translateX(26px);
         }
 
@@ -859,9 +863,11 @@
             .header-container {
                 height: 4rem;
             }
+
             .hero {
                 padding: 7.5rem 0 4rem 0;
             }
+
             .hero-buttons {
                 flex-direction: column;
                 align-items: stretch;
@@ -869,13 +875,17 @@
                 margin-left: auto;
                 margin-right: auto;
             }
+
             .btn {
                 width: 100%;
                 padding: 0.85rem 1.5rem;
             }
+
             nav {
-                display: none; /* Hide Desktop menu on tablet/mobile */
+                display: none;
+                /* Hide Desktop menu on tablet/mobile */
             }
+
             .pricing-card.featured::after {
                 position: static;
                 display: inline-block;
@@ -888,15 +898,19 @@
             .container {
                 padding: 0 1rem;
             }
+
             .problem-item {
                 padding: 1.25rem 1rem;
             }
+
             .module-card {
                 padding: 1.75rem 1.25rem;
             }
+
             .pricing-card {
                 padding: 2rem 1.25rem;
             }
+
             .cta-box {
                 padding: 2.5rem 1rem;
             }
@@ -919,20 +933,16 @@
                 <a href="#precios">Planes</a>
                 <a href="#roadmap">Próximamente</a>
             </nav>
-            <div>
-                <a href="#contacto" class="btn btn-outline">Solicitar Demo</a>
-            </div>
+
         </div>
     </header>
 
     <!-- Hero Section -->
     <section class="hero container">
         <h1>La forma más fácil de controlar y<br><span>hacer crecer su taller mecánico</span></h1>
-        <p>PitStop es una plataforma especializada que centraliza la administración de clientes, vehículos, órdenes de trabajo, inventario, gastos, nómina y rentabilidad en tiempo real.</p>
-        <div class="hero-buttons">
-            <a href="#contacto" class="btn btn-primary">Solicitar Demostración Gratis</a>
-            <a href="#precios" class="btn btn-secondary">Ver Planes e Inversión</a>
-        </div>
+        <p>PitStop es una plataforma especializada que centraliza la administración de clientes, vehículos, órdenes de
+            trabajo, inventario, gastos, nómina y rentabilidad en tiempo real.</p>
+
     </section>
 
     <!-- Problem Checklist Section -->
@@ -940,7 +950,8 @@
         <div class="container problem-container">
             <div class="problem-header">
                 <h2>¿Sabe realmente cuánto dinero gana su taller cada mes?</h2>
-                <p>La mayoría de los talleres mecánicos presentan pérdidas invisibles causadas por problemas cotidianos:</p>
+                <p>La mayoría de los talleres mecánicos presentan pérdidas invisibles causadas por problemas cotidianos:
+                </p>
             </div>
             <div class="problem-grid">
                 <div class="problem-item">
@@ -994,7 +1005,8 @@
                     <span class="material-icons-round">directions_car</span>
                 </div>
                 <h3>Gestión de Vehículos</h3>
-                <p>Historial técnico completo por vehículo: cambios de aceite, repuestos, reparaciones y diagnósticos.</p>
+                <p>Historial técnico completo por vehículo: cambios de aceite, repuestos, reparaciones y diagnósticos.
+                </p>
             </div>
 
             <!-- Órdenes de Trabajo -->
@@ -1003,7 +1015,8 @@
                     <span class="material-icons-round">construction</span>
                 </div>
                 <h3>Órdenes de Trabajo</h3>
-                <p>Seguimiento al ciclo de vida de cada servicio (recepción, proceso, listo y entrega) y asignación técnica.</p>
+                <p>Seguimiento al ciclo de vida de cada servicio (recepción, proceso, listo y entrega) y asignación
+                    técnica.</p>
             </div>
 
             <!-- Inventario Inteligente -->
@@ -1012,7 +1025,8 @@
                     <span class="material-icons-round">inventory_2</span>
                 </div>
                 <h3>Inventario Inteligente</h3>
-                <p>Administración exacta de stock, entradas/salidas, códigos SKU, y alertas automáticas de stock bajo.</p>
+                <p>Administración exacta de stock, entradas/salidas, códigos SKU, y alertas automáticas de stock bajo.
+                </p>
             </div>
 
             <!-- Cotizaciones -->
@@ -1021,7 +1035,8 @@
                     <span class="material-icons-round">request_quote</span>
                 </div>
                 <h3>Cotizaciones Profesionales</h3>
-                <p>Generación rápida de cotizaciones (repuestos y mano de obra) y conversión a órdenes con un solo clic.</p>
+                <p>Generación rápida de cotizaciones (repuestos y mano de obra) y conversión a órdenes con un solo clic.
+                </p>
             </div>
 
             <!-- Gestión de Gastos -->
@@ -1039,7 +1054,8 @@
                     <span class="material-icons-round">badge</span>
                 </div>
                 <h3>Técnicos y Nómina</h3>
-                <p>Cálculo automatizado de comisiones según la mano de obra finalizada y salarios fijos del personal.</p>
+                <p>Cálculo automatizado de comisiones según la mano de obra finalizada y salarios fijos del personal.
+                </p>
             </div>
 
             <!-- Reportes y Rentabilidad -->
@@ -1048,7 +1064,8 @@
                     <span class="material-icons-round">bar_chart</span>
                 </div>
                 <h3>Reportes Financieros</h3>
-                <p>Indicadores clave de rendimiento (KPIs), ingresos, egresos y la rentabilidad real de cada reparación.</p>
+                <p>Indicadores clave de rendimiento (KPIs), ingresos, egresos y la rentabilidad real de cada reparación.
+                </p>
             </div>
 
             <!-- Multi Taller -->
@@ -1057,7 +1074,8 @@
                     <span class="material-icons-round">storefront</span>
                 </div>
                 <h3>Multi Taller / Sucursales</h3>
-                <p>Administración centralizada de múltiples sedes o talleres con información organizada de forma independiente.</p>
+                <p>Administración centralizada de múltiples sedes o talleres con información organizada de forma
+                    independiente.</p>
             </div>
 
             <!-- Agenda de Citas -->
@@ -1066,7 +1084,8 @@
                     <span class="material-icons-round">calendar_today</span>
                 </div>
                 <h3>Agenda y Citas</h3>
-                <p>Calendario interactivo de turnos de ingreso de vehículos para evitar congestión física en el taller.</p>
+                <p>Calendario interactivo de turnos de ingreso de vehículos para evitar congestión física en el taller.
+                </p>
             </div>
 
             <!-- Hojas de Check (Inspección) -->
@@ -1075,7 +1094,8 @@
                     <span class="material-icons-round">assignment</span>
                 </div>
                 <h3>Checklist de Inspección</h3>
-                <p>Recepción digital e inspección de daños preexistentes (con registro de fotos y firmas) para blindar su taller.</p>
+                <p>Recepción digital e inspección de daños preexistentes (con registro de fotos y firmas) para blindar
+                    su taller.</p>
             </div>
         </div>
     </section>
@@ -1094,7 +1114,8 @@
                 </div>
                 <div class="feature-text">
                     <h4>Conozca la Rentabilidad Real</h4>
-                    <p>Visualice exactamente cuánto factura, cuánto gasta y cuánto gana realmente por cada orden de trabajo.</p>
+                    <p>Visualice exactamente cuánto factura, cuánto gasta y cuánto gana realmente por cada orden de
+                        trabajo.</p>
                 </div>
             </div>
 
@@ -1104,7 +1125,8 @@
                 </div>
                 <div class="feature-text">
                     <h4>Respaldos de Información</h4>
-                    <p>Toda su información protegida diariamente en la nube con altos estándares de seguridad y confidencialidad.</p>
+                    <p>Toda su información protegida diariamente en la nube con altos estándares de seguridad y
+                        confidencialidad.</p>
                 </div>
             </div>
 
@@ -1114,7 +1136,8 @@
                 </div>
                 <div class="feature-text">
                     <h4>Información en Tiempo Real</h4>
-                    <p>Monitoree las finanzas e inventario de su negocio en vivo desde su teléfono, tablet o computadora.</p>
+                    <p>Monitoree las finanzas e inventario de su negocio en vivo desde su teléfono, tablet o
+                        computadora.</p>
                 </div>
             </div>
 
@@ -1134,7 +1157,8 @@
                 </div>
                 <div class="feature-text">
                     <h4>Productividad por Colaborador</h4>
-                    <p>Identifique de manera rápida cuáles técnicos y qué servicios generan mejores resultados financieros.</p>
+                    <p>Identifique de manera rápida cuáles técnicos y qué servicios generan mejores resultados
+                        financieros.</p>
                 </div>
             </div>
 
@@ -1144,7 +1168,8 @@
                 </div>
                 <div class="feature-text">
                     <h4>Soporte Técnico Integrado</h4>
-                    <p>Soporte y acompañamiento continuo directamente desde la plataforma para resolver dudas operativas.</p>
+                    <p>Soporte y acompañamiento continuo directamente desde la plataforma para resolver dudas
+                        operativas.</p>
                 </div>
             </div>
         </div>
@@ -1154,7 +1179,8 @@
     <section class="pricing-section container" id="precios">
         <div class="section-title">
             <h2>Planes de Inversión</h2>
-            <p>Acceso completo desde el primer día. Sin funciones limitadas. La diferencia entre planes corresponde únicamente a la cantidad de talleres o sedes administradas.</p>
+            <p>Acceso completo desde el primer día. Sin funciones limitadas. La diferencia entre planes corresponde
+                únicamente a la cantidad de talleres o sedes administradas.</p>
         </div>
 
         <!-- Billing Period Toggle Switch -->
@@ -1172,7 +1198,8 @@
             <!-- Plan 1 Taller -->
             <div class="pricing-card glass">
                 <h3>Plan 1 Taller</h3>
-                <p style="color: var(--text-secondary); font-size: 0.9rem;">Ideal para talleres independientes que desean digitalizar su operación.</p>
+                <p style="color: var(--text-secondary); font-size: 0.9rem;">Ideal para talleres independientes que
+                    desean digitalizar su operación.</p>
                 <div class="price-container">
                     <span class="price" id="p1-price">$120.000</span>
                     <span class="price-period" id="p1-period">COP / mes</span>
@@ -1191,7 +1218,8 @@
             <!-- Plan 2 Talleres -->
             <div class="pricing-card glass featured">
                 <h3>Plan 2 Talleres</h3>
-                <p style="color: var(--text-secondary); font-size: 0.9rem;">Ideal para empresas con dos sedes que desean centralizar su información.</p>
+                <p style="color: var(--text-secondary); font-size: 0.9rem;">Ideal para empresas con dos sedes que desean
+                    centralizar su información.</p>
                 <div class="price-container">
                     <span class="price" id="p2-price">$180.000</span>
                     <span class="price-period" id="p2-period">COP / mes</span>
@@ -1210,7 +1238,8 @@
             <!-- Plan 3 Talleres o Más -->
             <div class="pricing-card glass">
                 <h3>Plan 3+ Talleres</h3>
-                <p style="color: var(--text-secondary); font-size: 0.9rem;">Diseñado para empresas con múltiples sedes que buscan reducir costos.</p>
+                <p style="color: var(--text-secondary); font-size: 0.9rem;">Diseñado para empresas con múltiples sedes
+                    que buscan reducir costos.</p>
                 <div class="price-container">
                     <span class="price" id="p3-price">$225.000</span>
                     <span class="price-period" id="p3-period">COP / mes</span>
@@ -1222,14 +1251,17 @@
                     <li><span class="material-icons-round">check_circle</span> Usuarios y mecánicos ilimitados</li>
                     <li><span class="material-icons-round">check_circle</span> Actualizaciones permanentes</li>
                     <li><span class="material-icons-round">check_circle</span> Soporte técnico prioritario</li>
-                    <li><span class="material-icons-round">check_circle</span> +$75.000 COP/mes por taller adicional</li>
+                    <li><span class="material-icons-round">check_circle</span> +$75.000 COP/mes por taller adicional
+                    </li>
                 </ul>
                 <a href="#contacto" class="btn btn-outline">Comenzar Ahora</a>
             </div>
         </div>
 
         <div class="pricing-disclaimer">
-            <p>* Los valores anteriores no incluyen IVA. La diferencia entre los planes corresponde únicamente a la cantidad de sucursales o talleres administrados. No existen cobros adicionales por habilitar módulos específicos.</p>
+            <p>* Los valores anteriores no incluyen IVA. La diferencia entre los planes corresponde únicamente a la
+                cantidad de sucursales o talleres administrados. No existen cobros adicionales por habilitar módulos
+                específicos.</p>
         </div>
     </section>
 
@@ -1249,12 +1281,14 @@
                 <div class="roadmap-item">
                     <span class="roadmap-badge">Próximamente</span>
                     <h4>Recordatorios Automáticos</h4>
-                    <p>Avisos automáticos a clientes para agendar su próximo cambio de aceite o mantenimiento preventivo.</p>
+                    <p>Avisos automáticos a clientes para agendar su próximo cambio de aceite o mantenimiento
+                        preventivo.</p>
                 </div>
                 <div class="roadmap-item">
                     <span class="roadmap-badge">Próximamente</span>
                     <h4>Portal de Clientes</h4>
-                    <p>Espacio digital donde sus clientes podrán descargar sus cotizaciones, facturas e historial técnico.</p>
+                    <p>Espacio digital donde sus clientes podrán descargar sus cotizaciones, facturas e historial
+                        técnico.</p>
                 </div>
                 <div class="roadmap-item">
                     <span class="roadmap-badge">Próximamente</span>
@@ -1275,12 +1309,14 @@
             <div class="stat-card glass">
                 <div class="stat-number">100%</div>
                 <div class="stat-label">Información en la Nube</div>
-                <p style="color: var(--text-secondary); font-size: 0.85rem; margin-top: 0.5rem;">Acceso permanente desde cualquier lugar</p>
+                <p style="color: var(--text-secondary); font-size: 0.85rem; margin-top: 0.5rem;">Acceso permanente desde
+                    cualquier lugar</p>
             </div>
             <div class="stat-card glass">
                 <div class="stat-number">0</div>
                 <div class="stat-label">Límites de Usuarios</div>
-                <p style="color: var(--text-secondary); font-size: 0.85rem; margin-top: 0.5rem;">Cree todos los mecánicos y roles que requiera</p>
+                <p style="color: var(--text-secondary); font-size: 0.85rem; margin-top: 0.5rem;">Cree todos los
+                    mecánicos y roles que requiera</p>
             </div>
             <div class="stat-card glass">
                 <div class="stat-number">99.9%</div>
@@ -1293,9 +1329,10 @@
     <section class="cta-section container" id="contacto">
         <div class="cta-box glass">
             <h2>¿Listo para digitalizar su taller?</h2>
-            <p>Solicite una demostración guiada sin compromiso y descubra cómo PitStop puede optimizar y rentabilizar su negocio desde el primer día.</p>
-            <a href="mailto:soporte@pitstop.com.co?subject=Solicitud de Demostracion PitStop" class="btn btn-primary">
-                <span class="material-icons-round">email</span> Solicitar Demostración Comercial
+            <p>Solicite una demostración guiada sin compromiso y descubra cómo PitStop puede optimizar y rentabilizar su
+                negocio desde el primer día.</p>
+            <a href="https://wa.me/573234414758?text=Hola%20PitStop,%20me%20gustaría%20solicitar%20una%20demostración%20de%20la%20plataforma." target="_blank" class="btn btn-primary">
+                <span class="material-icons-round">chat</span> Solicitar Demostración Comercial
             </a>
         </div>
     </section>
@@ -1306,7 +1343,8 @@
             <div class="footer-grid">
                 <div class="footer-logo-side">
                     <h3><span class="material-icons-round logo-icon">minor_crash</span> PITSTOP</h3>
-                    <p>La plataforma integral para el control y crecimiento de talleres mecánicos y automotrices modernos.</p>
+                    <p>La plataforma integral para el control y crecimiento de talleres mecánicos y automotrices
+                        modernos.</p>
                 </div>
                 <div class="footer-links-side">
                     <h4>Navegación</h4>
@@ -1347,7 +1385,7 @@
         const p3Period = document.getElementById('p3-period');
         const p3Subtext = document.getElementById('p3-subtext');
 
-        billingSwitch.addEventListener('change', function() {
+        billingSwitch.addEventListener('change', function () {
             if (this.checked) {
                 // Yearly Prices
                 labelMonthly.classList.remove('active');
